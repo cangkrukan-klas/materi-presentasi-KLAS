@@ -26,7 +26,6 @@ systemctl start nginx
 echo "========Configuring Nginx Proxy to Django Dev Server========"
 sed -i "s|host-ip|$2|" $1
 cp $1 /etc/nginx/sites-available/
-ln -s /etc/nginx/sites-available/$1 /etc/nginx/sites-enabled/$1 
-rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/$1 /etc/nginx/sites-enabled/$1
 systemctl restart nginx
 echo "========Success========"
